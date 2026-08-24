@@ -23,22 +23,29 @@ export function ProjectCard({ project, prominent = false }: ProjectCardProps) {
             Flagship project
           </p>
         ) : null}
-        <h3 className="text-xl font-semibold text-white">{project.title}</h3>
+        <p className="mt-1 text-sm text-[#f8c268]">{project.projectType}</p>
+        <h3 className="mt-2 text-xl font-semibold text-white">{project.title}</h3>
         <p className="mt-3 text-sm leading-6 text-[#c8d9db]">{project.description}</p>
         <ul className="mt-5 flex flex-wrap gap-2" aria-label={`${project.title} technologies`}>
-          {project.technologies.map((technology) => (
+          {project.technologies.length === 0 ? (
+            <li className="rounded-full bg-[#46a5bb]/15 px-3 py-1 text-xs text-[#bfe8f0]">
+              Technology details to be added
+            </li>
+          ) : project.technologies.map((technology) => (
             <li key={technology} className="rounded-full bg-[#46a5bb]/15 px-3 py-1 text-xs text-[#bfe8f0]">
               {technology}
             </li>
           ))}
         </ul>
         <div className="mt-6 flex flex-wrap gap-x-5 gap-y-3 text-sm font-semibold">
-          <Link
-            href={`/projects/${project.slug}`}
-            className="text-[#f8c268] underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f8c268]"
-          >
-            View case study <span aria-hidden="true">→</span>
-          </Link>
+          {project.caseStudyUrl ? (
+            <Link
+              href={project.caseStudyUrl}
+              className="text-[#f8c268] underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f8c268]"
+            >
+              View case study <span aria-hidden="true">→</span>
+            </Link>
+          ) : null}
           {project.githubUrl ? <a href={project.githubUrl}>GitHub</a> : null}
           {project.liveUrl ? <a href={project.liveUrl}>Live demo</a> : null}
         </div>

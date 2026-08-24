@@ -1,5 +1,5 @@
 export const profile = {
-  name: "[Your Name]",
+  name: "Samson Tauneri Limanikuki",
   role: "Software Engineering Student & Aspiring Software Engineer",
   introduction:
     "I build practical software solutions, explore emerging technologies and continuously develop my technical and professional skills.",
