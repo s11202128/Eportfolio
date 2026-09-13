@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import type { LucideIcon } from "lucide-react";
 
 type SectionProps = {
   children: ReactNode;
@@ -7,6 +8,7 @@ type SectionProps = {
   title: string;
   description?: string;
   className?: string;
+  icon?: LucideIcon;
 };
 
 export function Section({
@@ -16,6 +18,7 @@ export function Section({
   title,
   description,
   className = "",
+  icon: Icon,
 }: SectionProps) {
   return (
     <section id={id} className={`py-20 sm:py-24 lg:py-28 ${className}`}>
@@ -26,8 +29,9 @@ export function Section({
               {eyebrow}
             </p>
           ) : null}
-          <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            {title}
+          <h2 className="flex items-center gap-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+            {Icon ? <Icon className="size-7 shrink-0 text-[#f8c268]" strokeWidth={1.7} aria-hidden="true" /> : null}
+            <span>{title}</span>
           </h2>
           {description ? (
             <p className="mt-4 text-base leading-7 text-[#b8cccf] sm:text-lg">{description}</p>

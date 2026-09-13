@@ -1,14 +1,15 @@
 import Link from "next/link";
+import { moduleIcons } from "@/components/icons";
 
 const navigation = [
-  ["Home", "/"],
-  ["About", "/about"],
-  ["Projects", "/projects"],
-  ["Skills", "/skills"],
-  ["Journey", "/journey"],
-  ["Achievements", "/achievements"],
-  ["ePortfolio", "/eportfolio"],
-  ["Contact", "/contact"],
+  ["Home", "/", moduleIcons.home],
+  ["About", "/about", moduleIcons.about],
+  ["Projects", "/projects", moduleIcons.projects],
+  ["Skills", "/skills", moduleIcons.skills],
+  ["Journey", "/journey", moduleIcons.journey],
+  ["Achievements", "/achievements", moduleIcons.achievements],
+  ["ePortfolio", "/eportfolio", moduleIcons.eportfolio],
+  ["Contact", "/contact", moduleIcons.contact],
 ] as const;
 
 export function SiteHeader() {
@@ -19,8 +20,9 @@ export function SiteHeader() {
           Samson Limanikuki
         </Link>
         <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-[#c8d9db]">
-          {navigation.map(([label, href]) => (
-            <Link key={href} href={href} className="transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f8c268]">
+          {navigation.map(([label, href, Icon]) => (
+            <Link key={href} href={href} className="inline-flex items-center gap-1.5 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f8c268]">
+              <Icon size={15} strokeWidth={1.8} aria-hidden="true" />
               {label}
             </Link>
           ))}
