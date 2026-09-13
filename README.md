@@ -33,6 +33,8 @@ Supabase is the planned content backend for projects, skills, achievements and p
 
 Do not expose a Supabase secret/service-role key in the browser or commit `.env.local`. The public pages remain backed by the typed files until the authenticated admin editor is added.
 
+After configuration, open `/admin/login` to sign in. The protected `/admin` dashboard lets the authenticated owner create, edit, publish, unpublish and delete projects, skill groups and achievements. Public pages will be migrated from the typed files to published Supabase records in the next content migration step.
+
 ## Commands
 
 ```bash
