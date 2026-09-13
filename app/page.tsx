@@ -30,6 +30,11 @@ export default function Home() {
               <ButtonLink href="/projects">View My Projects</ButtonLink>
               <ButtonLink href="/contact" variant="secondary">Get in Touch</ButtonLink>
             </div>
+            <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 border-t border-[#78bac7]/25 pt-6 text-sm">
+              <a className="font-semibold text-[#f8c268] underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f8c268]" href={profile.socialLinks.github} target="_blank" rel="noreferrer">GitHub</a>
+              <a className="font-semibold text-[#f8c268] underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f8c268]" href={profile.socialLinks.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+              <a className="font-semibold text-[#f8c268] underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f8c268]" href={`mailto:${profile.socialLinks.email}`}>Email</a>
+            </div>
           </div>
           <div className="relative mx-auto w-full max-w-sm lg:mx-0 lg:justify-self-end" aria-hidden="true">
             <div className="aspect-square rounded-2xl border border-[#78bac7]/35 bg-[linear-gradient(135deg,rgba(70,165,187,0.32),rgba(13,48,52,0.65)),radial-gradient(circle_at_30%_30%,rgba(248,194,104,0.35),transparent_20%)] p-6 shadow-[0_30px_90px_rgba(0,0,0,0.25)]">

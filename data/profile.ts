@@ -6,9 +6,9 @@ export const profile = {
   about:
     "I am a software engineering student developing practical skills, building technology solutions, and preparing for a career in professional software development.",
   socialLinks: {
-    github: null,
-    linkedin: null,
-    email: null,
+    github: "https://github.com/s11202128",
+    linkedin: "https://www.linkedin.com/in/samson-tauneri-limanikuki-2334333ab/",
+    email: "limanikukitauneri@gmail.com",
   },
   cvUrl: null,
 } as const;
