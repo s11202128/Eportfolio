@@ -8,8 +8,8 @@ export const profile = {
   socialLinks: {
     github: "https://github.com/s11202128",
     linkedin: "https://www.linkedin.com/feed/",
-    email: "limanikukitauneri@gmail.com",
-    gmail: "https://mail.google.com/mail/?view=cm&fs=1&to=limanikukitauneri@gmail.com",
+    email: "taunerilimanikuki@gmail.com",
+    gmail: "https://mail.google.com/mail/?view=cm&fs=1&to=taunerilimanikuki@gmail.com",
   },
   cvUrl: null,
 } as const;
