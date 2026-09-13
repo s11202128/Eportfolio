@@ -36,7 +36,7 @@ export default async function Home() {
             <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 border-t border-[#78bac7]/25 pt-6 text-sm">
               <a className="inline-flex items-center gap-2 font-semibold text-[#f8c268] underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f8c268]" href={profile.socialLinks.github} target="_blank" rel="noreferrer"><Github size={15} aria-hidden="true" />GitHub</a>
               <a className="inline-flex items-center gap-2 font-semibold text-[#f8c268] underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f8c268]" href={profile.socialLinks.linkedin} target="_blank" rel="noreferrer"><Linkedin size={15} aria-hidden="true" />LinkedIn</a>
-              <a className="inline-flex items-center gap-2 font-semibold text-[#f8c268] underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f8c268]" href={`mailto:${profile.socialLinks.email}`}><Mail size={15} aria-hidden="true" />Email</a>
+              <a className="inline-flex items-center gap-2 font-semibold text-[#f8c268] underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f8c268]" href={profile.socialLinks.gmail} target="_blank" rel="noreferrer"><Mail size={15} aria-hidden="true" />Email</a>
             </div>
           </div>
           <div className="hero-image-frame relative mx-auto aspect-square w-full max-w-sm overflow-hidden rounded-2xl border border-[#78bac7]/35 bg-[#103b40] p-2 shadow-[0_30px_90px_rgba(0,0,0,0.25)] lg:mx-0 lg:justify-self-end">

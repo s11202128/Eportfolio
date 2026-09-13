@@ -9,6 +9,7 @@ export const profile = {
     github: "https://github.com/s11202128",
     linkedin: "https://www.linkedin.com/feed/",
     email: "limanikukitauneri@gmail.com",
+    gmail: "https://mail.google.com/mail/?view=cm&fs=1&to=limanikukitauneri@gmail.com",
   },
   cvUrl: null,
 } as const;
