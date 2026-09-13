@@ -1,4 +1,5 @@
 import { Section } from "@/components/section";
+import { Trophy } from "@/components/icons";
 import { getPublishedAchievements } from "@/lib/content";
 
 export const metadata = { title: "Achievements | Personal ePortfolio", description: "Achievements and recognition from my academic and professional development." };
@@ -8,7 +9,7 @@ export default async function AchievementsPage() {
 
   return (
     <main>
-      <Section eyebrow="Evidence" title="Achievements & Recognition" description="Verified achievements, certificates and recognition will be collected here.">
+      <Section icon={Trophy} eyebrow="Evidence" title="Achievements & Recognition" description="Verified achievements, certificates and recognition will be collected here.">
         {achievements.length === 0 ? (
           <div className="border border-dashed border-[#78bac7]/40 bg-[#103b40]/50 p-8">
             <p className="text-lg text-white">No achievement entries have been added yet.</p>

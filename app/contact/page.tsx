@@ -1,4 +1,5 @@
 import { ButtonLink } from "@/components/button-link";
+import { Mail } from "@/components/icons";
 import { profile } from "@/data/profile";
 
 export const metadata = { title: "Contact | Personal ePortfolio", description: "Contact details for my ePortfolio." };
@@ -8,7 +9,7 @@ export default function ContactPage() {
     <main className="min-h-[70vh] py-20 sm:py-24">
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#f8c268]">Contact</p>
-        <h1 className="mt-3 text-4xl font-semibold tracking-tight text-white sm:text-5xl">Let&apos;s Connect</h1>
+        <h1 className="mt-3 flex items-center gap-3 text-4xl font-semibold tracking-tight text-white sm:text-5xl"><Mail className="size-9 text-[#f8c268]" strokeWidth={1.7} aria-hidden="true" />Let&apos;s Connect</h1>
         <p className="mt-5 text-lg leading-8 text-[#c8d9db]">The best way to reach me is by email. You can also find my software engineering work and professional profile through the links below.</p>
         <div className="mt-10 flex flex-wrap gap-3">
           <ButtonLink href={`mailto:${profile.socialLinks.email}`}>Email me</ButtonLink>

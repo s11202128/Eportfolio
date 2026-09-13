@@ -1,15 +1,16 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ButtonLink } from "@/components/button-link";
+import { Github, Linkedin, Mail, moduleIcons, Rocket } from "@/components/icons";
 import { Section } from "@/components/section";
 import { profile } from "@/data/profile";
 import { getPublishedProjects } from "@/lib/content";
 
 const homeModules = [
-  { label: "About", href: "/about", description: "The person, purpose and direction behind this portfolio." },
-  { label: "Skills", href: "/skills", description: "The tools, technologies and practices in my current toolkit." },
-  { label: "Journey", href: "/journey", description: "The stages of my development from student to engineer." },
-  { label: "ePortfolio", href: "/eportfolio", description: "Academic evidence and reflections organised by year." },
+  { label: "About", href: "/about", description: "The person, purpose and direction behind this portfolio.", icon: moduleIcons.about },
+  { label: "Skills", href: "/skills", description: "The tools, technologies and practices in my current toolkit.", icon: moduleIcons.skills },
+  { label: "Journey", href: "/journey", description: "The stages of my development from student to engineer.", icon: moduleIcons.journey },
+  { label: "ePortfolio", href: "/eportfolio", description: "Academic evidence and reflections organised by year.", icon: moduleIcons.eportfolio },
 ] as const;
 
 export default async function Home() {
@@ -33,9 +34,9 @@ export default async function Home() {
               <ButtonLink href="/contact" variant="secondary">Get in Touch</ButtonLink>
             </div>
             <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 border-t border-[#78bac7]/25 pt-6 text-sm">
-              <a className="font-semibold text-[#f8c268] underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f8c268]" href={profile.socialLinks.github} target="_blank" rel="noreferrer">GitHub</a>
-              <a className="font-semibold text-[#f8c268] underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f8c268]" href={profile.socialLinks.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
-              <a className="font-semibold text-[#f8c268] underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f8c268]" href={`mailto:${profile.socialLinks.email}`}>Email</a>
+              <a className="inline-flex items-center gap-2 font-semibold text-[#f8c268] underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f8c268]" href={profile.socialLinks.github} target="_blank" rel="noreferrer"><Github size={15} aria-hidden="true" />GitHub</a>
+              <a className="inline-flex items-center gap-2 font-semibold text-[#f8c268] underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f8c268]" href={profile.socialLinks.linkedin} target="_blank" rel="noreferrer"><Linkedin size={15} aria-hidden="true" />LinkedIn</a>
+              <a className="inline-flex items-center gap-2 font-semibold text-[#f8c268] underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f8c268]" href={`mailto:${profile.socialLinks.email}`}><Mail size={15} aria-hidden="true" />Email</a>
             </div>
           </div>
           <div className="hero-image-frame relative mx-auto aspect-square w-full max-w-sm overflow-hidden rounded-2xl border border-[#78bac7]/35 bg-[#103b40] p-2 shadow-[0_30px_90px_rgba(0,0,0,0.25)] lg:mx-0 lg:justify-self-end">
@@ -62,7 +63,8 @@ export default async function Home() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {homeModules.map((module) => (
             <Link key={module.href} href={module.href} className="group border border-[#78bac7]/25 bg-[#103b40] p-5 transition-colors hover:border-[#46a5bb] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f8c268]">
-              <h2 className="text-lg font-semibold text-white">{module.label}</h2>
+              <module.icon className="size-6 text-[#f8c268]" strokeWidth={1.7} aria-hidden="true" />
+              <h2 className="mt-5 text-lg font-semibold text-white">{module.label}</h2>
               <p className="mt-3 text-sm leading-6 text-[#b8cccf]">{module.description}</p>
               <span className="mt-5 inline-block text-sm font-semibold text-[#f8c268]">Explore <span aria-hidden="true">→</span></span>
             </Link>
@@ -70,7 +72,7 @@ export default async function Home() {
         </div>
       </Section>
 
-      <Section eyebrow="Selected work" title="Featured project" description="A quick look at the project currently anchoring this portfolio." className="bg-[#0b2b2f]">
+      <Section icon={Rocket} eyebrow="Selected work" title="Featured project" description="A quick look at the project currently anchoring this portfolio." className="bg-[#0b2b2f]">
         {featuredProject ? (
           <div className="flex flex-col gap-5 border border-[#78bac7]/25 bg-[#103b40] p-6 sm:flex-row sm:items-end sm:justify-between">
             <div>

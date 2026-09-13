@@ -1,4 +1,5 @@
 import { ProjectsExplorer } from "@/components/projects/projects-explorer";
+import { FolderKanban } from "@/components/icons";
 import { getPublishedProjects } from "@/lib/content";
 
 export const metadata = {
@@ -14,7 +15,7 @@ export default async function ProjectsPage() {
       <div className="mx-auto w-full max-w-6xl px-6 lg:px-8">
         <header className="max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#f8c268]">Portfolio</p>
-          <h1 className="mt-3 text-4xl font-semibold tracking-tight text-white sm:text-5xl">My Projects</h1>
+          <h1 className="mt-3 flex items-center gap-3 text-4xl font-semibold tracking-tight text-white sm:text-5xl"><FolderKanban className="size-9 text-[#f8c268]" strokeWidth={1.7} aria-hidden="true" />My Projects</h1>
           <p className="mt-5 text-lg leading-8 text-[#c8d9db]">
             A collection of academic, personal and software engineering projects that demonstrate my technical development.
           </p>

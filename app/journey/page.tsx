@@ -1,4 +1,5 @@
 import { Section } from "@/components/section";
+import { Route } from "@/components/icons";
 import { journeyStages } from "@/data/journey";
 
 export const metadata = { title: "Journey | Personal ePortfolio", description: "The stages of my software engineering development journey." };
@@ -6,7 +7,7 @@ export const metadata = { title: "Journey | Personal ePortfolio", description: "
 export default function JourneyPage() {
   return (
     <main>
-      <Section eyebrow="Development path" title="My Journey" description="A developing map of the stages that shape my transition from student to software engineer.">
+      <Section icon={Route} eyebrow="Development path" title="My Journey" description="A developing map of the stages that shape my transition from student to software engineer.">
         <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {journeyStages.map((stage, index) => (
             <li key={stage} className="border border-[#78bac7]/25 bg-[#103b40] p-6">

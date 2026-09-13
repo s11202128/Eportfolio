@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Section } from "@/components/section";
+import { GraduationCap } from "@/components/icons";
 
 const years = ["Year 1", "Year 2", "Year 3", "Year 4"] as const;
 
@@ -11,7 +12,7 @@ export const metadata = {
 export default function EportfolioPage() {
   return (
     <main>
-      <Section eyebrow="Academic record" title="My ePortfolio" description="A record of my academic journey, projects, technical growth, professional development and learning experiences.">
+      <Section icon={GraduationCap} eyebrow="Academic record" title="My ePortfolio" description="A record of my academic journey, projects, technical growth, professional development and learning experiences.">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {years.map((year, index) => (
             <Link key={year} href={`/eportfolio/year-${index + 1}`} className={`group border p-6 transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f8c268] ${index === 3 ? "border-[#f8c268]/60 bg-[#52402a]/55" : "border-[#78bac7]/25 bg-[#103b40] hover:border-[#46a5bb]"}`}>

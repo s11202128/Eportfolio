@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ExternalLink, FileText, Github } from "@/components/icons";
 import type { Project } from "@/data/projects";
 
 type ProjectCardProps = { project: Project; prominent?: boolean };
@@ -43,11 +44,11 @@ export function ProjectCard({ project, prominent = false }: ProjectCardProps) {
               href={project.caseStudyUrl}
               className="text-[#f8c268] underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f8c268]"
             >
-              View case study <span aria-hidden="true">→</span>
+              <FileText size={15} aria-hidden="true" /> View case study <span aria-hidden="true">→</span>
             </Link>
           ) : null}
-          {project.githubUrl ? <a href={project.githubUrl}>GitHub</a> : null}
-          {project.liveUrl ? <a href={project.liveUrl}>Live demo</a> : null}
+          {project.githubUrl ? <a className="inline-flex items-center gap-1.5 text-[#c8d9db] hover:text-white" href={project.githubUrl}><Github size={15} aria-hidden="true" />GitHub</a> : null}
+          {project.liveUrl ? <a className="inline-flex items-center gap-1.5 text-[#c8d9db] hover:text-white" href={project.liveUrl}><ExternalLink size={15} aria-hidden="true" />Live demo</a> : null}
         </div>
       </div>
     </article>

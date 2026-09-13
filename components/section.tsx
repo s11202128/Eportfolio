@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
-import type { LucideIcon } from "lucide-react";
+
+type SectionIcon = (props: { className?: string; size?: number; strokeWidth?: number; "aria-hidden"?: string }) => ReactNode;
 
 type SectionProps = {
   children: ReactNode;
@@ -8,7 +9,7 @@ type SectionProps = {
   title: string;
   description?: string;
   className?: string;
-  icon?: LucideIcon;
+  icon?: SectionIcon;
 };
 
 export function Section({

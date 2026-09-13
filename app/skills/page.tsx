@@ -1,5 +1,6 @@
 import { SkillGroups } from "@/components/home/skill-groups";
 import { Section } from "@/components/section";
+import { Wrench } from "@/components/icons";
 import { getPublishedSkillGroups } from "@/lib/content";
 
 export const metadata = {
@@ -12,7 +13,7 @@ export default async function SkillsPage() {
 
   return (
     <main>
-      <Section eyebrow="Current toolkit" title="Skills & Technologies" description="Technologies, tools and practices currently represented in this portfolio foundation.">
+      <Section icon={Wrench} eyebrow="Current toolkit" title="Skills & Technologies" description="Technologies, tools and practices currently represented in this portfolio foundation.">
         <SkillGroups groups={skillGroups} />
       </Section>
     </main>
