@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ButtonLink } from "@/components/button-link";
 import { Section } from "@/components/section";
 import { profile } from "@/data/profile";
@@ -36,12 +37,20 @@ export default function Home() {
               <a className="font-semibold text-[#f8c268] underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f8c268]" href={`mailto:${profile.socialLinks.email}`}>Email</a>
             </div>
           </div>
-          <div className="relative mx-auto w-full max-w-sm lg:mx-0 lg:justify-self-end" aria-hidden="true">
-            <div className="aspect-square rounded-2xl border border-[#78bac7]/35 bg-[linear-gradient(135deg,rgba(70,165,187,0.32),rgba(13,48,52,0.65)),radial-gradient(circle_at_30%_30%,rgba(248,194,104,0.35),transparent_20%)] p-6 shadow-[0_30px_90px_rgba(0,0,0,0.25)]">
-              <div className="flex h-full flex-col justify-between rounded-xl border border-white/10 bg-[#0d3034]/65 p-6 backdrop-blur-sm">
+          <div className="hero-image-frame relative mx-auto aspect-square w-full max-w-sm overflow-hidden rounded-2xl border border-[#78bac7]/35 bg-[#103b40] p-2 shadow-[0_30px_90px_rgba(0,0,0,0.25)] lg:mx-0 lg:justify-self-end">
+            <div className="relative h-full overflow-hidden rounded-xl border border-white/15">
+              <Image
+                src="/images/samson-limanikuki.jpg"
+                alt="Portrait of Samson Limanikuki"
+                fill
+                priority
+                sizes="(min-width: 1024px) 24rem, 90vw"
+                className="hero-image object-cover"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(8,38,42,0.6))]" />
+              <div className="pointer-events-none absolute inset-x-5 bottom-5 flex items-end justify-between gap-4">
                 <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#f8c268]">ePortfolio</span>
-                <span className="max-w-48 text-2xl font-semibold leading-tight text-white">Building evidence for what comes next.</span>
-                <span className="text-sm text-[#b8cccf]">Student → Engineer</span>
+                <span className="text-sm text-white/85">Student → Engineer</span>
               </div>
             </div>
           </div>

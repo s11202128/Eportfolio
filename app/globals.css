@@ -26,3 +26,41 @@ body {
   background: #f8c268;
   color: #08262a;
 }
+
+@keyframes hero-image-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem) scale(1.04);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.hero-image-frame {
+  transition: transform 350ms ease, box-shadow 350ms ease;
+}
+
+.hero-image-frame:hover {
+  transform: translateY(-0.35rem);
+  box-shadow: 0 36px 100px rgba(0, 0, 0, 0.34);
+}
+
+.hero-image {
+  animation: hero-image-reveal 700ms ease-out both;
+  transition: transform 700ms ease;
+}
+
+.hero-image-frame:hover .hero-image {
+  transform: scale(1.035);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-image-frame,
+  .hero-image {
+    animation: none;
+    transition: none;
+  }
+}
