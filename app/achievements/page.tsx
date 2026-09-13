@@ -1,9 +1,11 @@
 import { Section } from "@/components/section";
-import { achievements } from "@/data/achievements";
+import { getPublishedAchievements } from "@/lib/content";
 
 export const metadata = { title: "Achievements | Personal ePortfolio", description: "Achievements and recognition from my academic and professional development." };
 
-export default function AchievementsPage() {
+export default async function AchievementsPage() {
+  const achievements = await getPublishedAchievements();
+
   return (
     <main>
       <Section eyebrow="Evidence" title="Achievements & Recognition" description="Verified achievements, certificates and recognition will be collected here.">

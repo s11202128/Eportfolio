@@ -3,7 +3,7 @@ import Image from "next/image";
 import { ButtonLink } from "@/components/button-link";
 import { Section } from "@/components/section";
 import { profile } from "@/data/profile";
-import { projects } from "@/data/projects";
+import { getPublishedProjects } from "@/lib/content";
 
 const homeModules = [
   { label: "About", href: "/about", description: "The person, purpose and direction behind this portfolio." },
@@ -12,7 +12,8 @@ const homeModules = [
   { label: "ePortfolio", href: "/eportfolio", description: "Academic evidence and reflections organised by year." },
 ] as const;
 
-export default function Home() {
+export default async function Home() {
+  const projects = await getPublishedProjects();
   const featuredProject = projects.find((project) => project.slug === "pasifikahealth");
 
   return (

@@ -1,12 +1,14 @@
 import { ProjectsExplorer } from "@/components/projects/projects-explorer";
-import { projects } from "@/data/projects";
+import { getPublishedProjects } from "@/lib/content";
 
 export const metadata = {
   title: "Projects | Personal ePortfolio",
   description: "A collection of academic, personal and software engineering projects.",
 };
 
-export default function ProjectsPage() {
+export default async function ProjectsPage() {
+  const projects = await getPublishedProjects();
+
   return (
     <main className="min-h-screen py-20 sm:py-24">
       <div className="mx-auto w-full max-w-6xl px-6 lg:px-8">
