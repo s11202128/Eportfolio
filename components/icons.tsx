@@ -1,5 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 import {
+  ArrowLeft,
   ArrowRight,
   ArrowUpRight,
   Award,
@@ -41,6 +42,7 @@ export const moduleIcons = {
 } satisfies Record<string, LucideIcon>;
 
 export {
+  ArrowLeft,
   ArrowRight,
   ArrowUpRight,
   Award,

@@ -1,9 +1,11 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/browser";
 
 export function LoginForm() {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -21,22 +23,53 @@ export function LoginForm() {
       return;
     }
 
-    window.location.href = "/admin";
+    router.push("/admin");
+    router.refresh();
   }
 
   return (
     <form onSubmit={handleSubmit} className="mt-8 space-y-5">
       <div>
-        <label htmlFor="email" className="text-sm font-medium text-[#d8e5e6]">Email</label>
-        <input id="email" name="email" type="email" autoComplete="email" required value={email} onChange={(event) => setEmail(event.target.value)} className="mt-2 w-full rounded-md border border-[#78bac7]/40 bg-[#08262a] px-4 py-3 text-white outline-none focus:border-[#f8c268]" />
+        <label htmlFor="email" className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+          Email address
+        </label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          autoComplete="email"
+          required
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
+          className="mt-2 w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition focus:border-sky-400 focus:ring-1 focus:ring-sky-400"
+        />
       </div>
       <div>
-        <label htmlFor="password" className="text-sm font-medium text-[#d8e5e6]">Password</label>
-        <input id="password" name="password" type="password" autoComplete="current-password" required value={password} onChange={(event) => setPassword(event.target.value)} className="mt-2 w-full rounded-md border border-[#78bac7]/40 bg-[#08262a] px-4 py-3 text-white outline-none focus:border-[#f8c268]" />
+        <label htmlFor="password" className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+          Password
+        </label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          autoComplete="current-password"
+          required
+          value={password}
+          onChange={(event) => setPassword(event.target.value)}
+          className="mt-2 w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition focus:border-sky-400 focus:ring-1 focus:ring-sky-400"
+        />
       </div>
-      {error ? <p role="alert" className="text-sm text-[#ffb4a8]">{error}</p> : null}
-      <button type="submit" disabled={isSubmitting} className="inline-flex min-h-11 w-full items-center justify-center rounded-md bg-[#46a5bb] px-5 py-2.5 text-sm font-semibold text-[#08262a] transition-colors hover:bg-[#6cb6c7] disabled:cursor-not-allowed disabled:opacity-60">
-        {isSubmitting ? "Signing in..." : "Sign in"}
+      {error ? (
+        <div role="alert" className="rounded-lg border border-rose-500/20 bg-rose-500/10 p-3 text-xs text-rose-300">
+          {error}
+        </div>
+      ) : null}
+      <button
+        type="submit"
+        disabled={isSubmitting}
+        className="inline-flex min-h-11 w-full items-center justify-center rounded-xl bg-gradient-to-r from-sky-400 to-sky-500 px-5 py-2.5 text-sm font-bold text-slate-950 shadow-md shadow-sky-500/20 transition hover:from-sky-300 hover:to-sky-400 disabled:cursor-not-allowed disabled:opacity-50"
+      >
+        {isSubmitting ? "Signing in..." : "Sign in to Dashboard"}
       </button>
     </form>
   );

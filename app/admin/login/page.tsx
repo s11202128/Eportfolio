@@ -10,12 +10,26 @@ export default function AdminLoginPage() {
   const isConfigured = hasSupabaseEnv();
 
   return (
-    <main className="min-h-[75vh] px-6 py-20 sm:py-24">
-      <div className="mx-auto max-w-md border border-[#78bac7]/25 bg-[#103b40] p-7 sm:p-9">
-        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#f8c268]">Private area</p>
-        <h1 className="mt-3 text-3xl font-semibold text-white">Admin sign in</h1>
-        <p className="mt-4 text-sm leading-6 text-[#b8cccf]">Manage your portfolio content from a protected workspace.</p>
-        {isConfigured ? <LoginForm /> : <p className="mt-8 border border-dashed border-[#78bac7]/40 p-4 text-sm leading-6 text-[#c8d9db]">Supabase is not configured yet. Add the values from `.env.example` to `.env.local` before signing in.</p>}
+    <main className="relative min-h-[80vh] bg-[#07090e] px-6 py-20 sm:py-24">
+      <div className="pointer-events-none absolute inset-0 tech-grid opacity-30" />
+      <div className="glass-panel mx-auto max-w-md rounded-2xl border border-white/10 p-8 sm:p-10">
+        <span className="inline-block rounded-md border border-sky-500/25 bg-sky-500/10 px-2.5 py-0.5 text-xs font-mono font-semibold uppercase tracking-wider text-sky-400">
+          PROTECTED WORKSPACE
+        </span>
+        <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-white">Admin Sign In</h1>
+        <p className="mt-2 text-sm leading-relaxed text-slate-400">
+          Manage your verified portfolio content, projects, and skills.
+        </p>
+        {isConfigured ? (
+          <div className="mt-6">
+            <LoginForm />
+          </div>
+        ) : (
+          <div className="mt-8 rounded-xl border border-dashed border-white/15 bg-white/[0.02] p-5 text-sm leading-relaxed text-slate-300">
+            <p className="font-semibold text-white">Supabase configuration required</p>
+            <p className="mt-1 text-xs text-slate-400">Add credentials from <code className="text-sky-300">.env.example</code> to <code className="text-sky-300">.env.local</code> to enable the admin CMS.</p>
+          </div>
+        )}
       </div>
     </main>
   );
