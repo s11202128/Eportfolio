@@ -22,8 +22,9 @@ export const metadata = {
   description: "Manage your ePortfolio content.",
 };
 
-function getTab(value: string | undefined): Tab {
-  return value === "skills" || value === "achievements" ? value : "projects";
+function getTab(value: string | string[] | undefined): Tab {
+  const normalized = Array.isArray(value) ? value[0] : value;
+  return normalized === "skills" || normalized === "achievements" ? normalized : "projects";
 }
 
 export default async function AdminPage({ searchParams }: PageProps<"/admin">) {
